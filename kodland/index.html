@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pr0gramer</title>
+</head>
+<body>
+    <header>
+        <!--nagłowek z nawigacją ruszający się z stroną-->
+        <img src="img/logo.png" alt="pr0gramer" height="50px" width="225px">
+        <div class="header_block-void"></div>
+        <nav>
+            <a href="#1">Przedstawienie</a>
+            <a href="#2">Języki</a>
+            <a href="#3">Art's</a>
+            <a href="#4">Studio</a>
+            <a href="#5">Kontakt</a>
+        </nav>
+    </header>
+    <main>
+        <section class="main_section-start" id="1">
+            <div>
+                <h2>Jestem Dawid z <br/>NoBodyKnows studio</h2>
+                <p>jest to moje portfolio, wizytówka <br/>,a także strona która przechowywóje moje prace</p>
+            </div>
+            <img src="img/joyestart.gif" alt="avatar" width="100%" height="100%" class="main_section-start-av">
+        </section>
+        <section class="main_section-lang" id="2">
+            <h1>Języki, które potrafię</h1>
+            <div class="div_flex-lang">
+              <div class="img-wrapper">
+                <img src="img/c++.png" alt="c++" class="cpp">
+                <p class="img-caption">c++</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="img/css.jpg" alt="css" class="css">
+                <p class="img-caption">css</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="img/html.png" alt="html" class="html">
+                <p class="img-caption">html</p>
+              </div>
+              <div class="img-wrapper">
+                <img src="img/python.png" alt="python" class="python">
+                <p class="img-caption">python</p>
+              </div>
+            </div>
+          </section>
+        <section class="main_section-art" id="3">
+            <!--!zdjęcia uporządkowane warp/flex!-->
+            <h1>Projekty graficzne</h1>
+            <div>
+                <img src="img/bicz.png" alt="bicz">
+                <img src="img/Chopesz.png" alt="chopesz">
+                <img src="img/claw.png" alt="szpony">
+                <img src="img/czakram.png" alt="czakram">
+                <img src="img/greatsword.png" alt="ogromny miecz">
+                <img src="img/kama.png" alt="kama">
+            </div>
+        </section>
+        <section class="main_section-exp" id="4">
+            <!--!po najechaniu wyśietla się szkoła?-->
+            <h1>Edukacja</h1>
+            <div class="img-morph_podst">
+              <img src="img/podstname.jpg" alt="szkoła podstawowa">
+              <img src="img/podst.jpg" alt="im Konrada Jażżewskiego w Błennie" class="top">
+            </div>
+            <div class="img-morph_ponad">
+              <img src="img/ponadname.jpg" alt="szkoła ponadpodstawowa">
+              <img src="img/ponad.jpg" alt="zespół szkół elektrycznych nr 4 we włocławku" class="top">
+            </div>
+        </section>
+    </main>
+    <footer id="5">
+        <!--!przydatne-->
+        <h1>Kontakt</h1>
+        <p>Numer : 111 222 333</p>
+        <a href="mailto:dawid4@wp.pl"><button>dawid4@wp.pl</button></a>
+    </footer>
+        <!--!JAWA SCRIPT-->
+    <script>
+        const imgWrappers = document.querySelectorAll('.img-wrapper');
+        imgWrappers.forEach((wrapper) => {
+          const img = wrapper.querySelector('img');
+          const caption = wrapper.querySelector('.img-caption');
+      
+          img.addEventListener('mouseenter', () => {
+            caption.style.visibility = 'visible';
+          });
+      
+          img.addEventListener('mouseleave', () => {
+            caption.style.visibility = 'hidden';
+          });
+        });
+      </script>
+</body>
+</html>
