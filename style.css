@@ -1,3 +1,32 @@
+/*#region zmienne globalne*/
+:root{
+    --bodyColor:#292929;
+    --mainColor:#000;
+    --mainColorSimilar:#232323;
+    --secColor:#07F847;
+    --textColor:#959595;
+    --accentColor:#eaff00;
+}
+/*#endregion*/
+
+/*#region animacje pojawiania strony*/
+body > *{
+    animation: shows 1s 1 forwards;
+}
+
+@keyframes shows {
+    0%{
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+/*#endregion*/
+
 /*#region zakończone*/
     
 html{
@@ -5,7 +34,7 @@ html{
 }
 
 body{
-    background-color:#292929;
+    background-color:var(--bodyColor);
     font-family:Helvetica, sans-serif;
     margin: 0px;
 }
@@ -23,7 +52,7 @@ header{
 }
 
 h1{
-    color:#07F847;
+    color:var(--secColor);
     font-size: 30px;
     text-align: center;
     margin:100px;
@@ -35,7 +64,7 @@ nav{
 
 a{
     text-decoration: none;
-    color: #07F847;
+    color: var(--accentColor);
     margin: 0px 15px 0px 15px;
 }
 
@@ -43,12 +72,12 @@ a{
 
 /*#region header*/
 h2{
-    color:#07F847;
+    color:var(--secColor);
     font-size: 30px;
 }
 
 p{
-    color:#959595;
+    color:var(--textColor);
 }
 
 .header_block-void{
@@ -60,24 +89,31 @@ p{
 .logo {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin: 5px 0px 0px 70px;
 }
 
 .logo img {
     display: block;
+    border-radius: 100px;
 }
 
 #navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 10px 0px 0px 180px;
 }
 
-#navbar a {
+#navbar a{
     text-decoration: none;
-    color: #07F847;
+    color: var(--secColor);
     margin: 0px 15px 0px 15px;
+}
+
+#navbar a:hover {
+    text-decoration: none;
+    color: var(--accentColor);
+    transition: .25s;
 }
 
 #nav-img {
@@ -97,6 +133,13 @@ p{
     }
 }
 
+.header-line{
+    position:sticky;
+    top:61px;
+    left:0;
+    z-index: 99;
+}
+
 /*#region circle like nav*/
 .circle-bar{
     position: fixed;
@@ -114,13 +157,13 @@ p{
     right: 30px;
     cursor: pointer;
     z-index: 101;
-    padding-top:9px;
+    padding-top:3px;
 }
 
 .bar {
     width: 100%;
     height: 4px;
-    background-color: #000;
+    background-color: var(--mainColor);
     position: absolute;
 }
 
@@ -128,7 +171,7 @@ span::before,
 span::after {
     content: "";
     display: block;
-    background-color: #000;
+    background-color: var(--mainColor);
     width: 100%;
     height: 4px;
     position: absolute;
@@ -171,7 +214,7 @@ span::after {
 }
 
 #nav a {
-    color: #000;
+    color: var(--mainColor);
     text-decoration: none;
     line-height: 70vw;
     position: absolute;
@@ -185,7 +228,7 @@ span::after {
 }
 
 #nav a:hover {
-    background: #39FF14;
+    background: var(--accentColor);
 }
 
 ul {
@@ -205,7 +248,7 @@ ul {
     right: -10vw;
     position: fixed;
     transition: all 1s ease-in-out;
-    background: #39FF14;
+    background: var(--accentColor);
 }
 
 nav.visible li:first-child {
@@ -311,6 +354,7 @@ nav.visible li:last-child a {
     justify-content: space-around;
     margin:50px 0px 75px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
     /*!animacja*/
@@ -318,9 +362,9 @@ nav.visible li:last-child a {
 .main_section-start-av{
     border-radius:100%;
     max-width: 300px;
-    min-width: 150px;
+    min-width: 200px;
     max-height: 300px;
-    min-height: 150px;
+    min-height: 200px;
     animation: av-fancy 0.5s 3s 1 forwards;
 }
 
@@ -344,6 +388,9 @@ nav.visible li:last-child a {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    scroll-snap-align: start;
+    width: 50%;
+    
 }
 
 .div_flex-lang div img {
@@ -363,7 +410,6 @@ nav.visible li:last-child a {
 .div_flex-lang div{
     width: 25%;
     height: 100%;
-    text-align: center;
 }
 
 .div_flex-lang div p{
@@ -376,24 +422,84 @@ nav.visible li:last-child a {
     transition: 0.5s;
 }
 
+.lang-ovwiu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: row-reverse;
+}
+
+.count_lang{
+    width: 30%;
+    background-color:var(--mainColorSimilar);
+    border-radius: 20%/50px;
+    min-width: 320px;
+}
+
+/*p w językach obcych */
+.count_lang p{
+    margin: 30px 0;
+}
+
+.count_lang h2{
+    margin: 40px 0px 40px 0px;
+}
+
+/*#region input*/
+input{
+    display: none;
+}
+
+article{
+    margin: 100px 0;
+}
+
+/*#endregion*/
+
 /*#endregion*/
 
 /*#region 3 sekcja obrazy*/
 
 .main_section-art div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 26%;
+    gap:30px;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
 }
 
 .main_section-art div img{
-    height: 200px;
-    width: 200px;
-    padding: 20px;
-    filter: drop-shadow(0 0 0.75rem #39FF14);
+    height: 250px;
+    width: 250px;
+    filter: drop-shadow(0 0 0.4rem var(--secColor));
 }
 
+.main_section-art div::-webkit-scrollbar{
+    width: 0;
+}
+
+/*#endregion*/
+
+/*#region wyrwa*/
+.void_art-edu{
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url("img/SOSmalStudioBaner.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wave-top{
+    position: absolute;
+    z-index: 0;
+}
 /*#endregion*/
 
 /*#region sekcja edukacji*/
@@ -442,12 +548,12 @@ nav.visible li:last-child a {
 
 /*#region stopka jest skończona*/
 .beh-main-foot{
-    color:#000;
+    color:var(--mainColor);
 }
 
 footer{
     text-align: center;
-    background-color: #232323;
+    background-color: var(--mainColorSimilar);
     margin: 100px 0px 0px 0px;
 }
 
@@ -457,11 +563,11 @@ footer>h1{
 
 button{
     color:black;
-    background-color: #07F847;
+    background-color: var(--secColor);
     background-image: none;
-    border: 1px solid #000;
+    border: 1px solid var(--mainColor);
     border-radius: 4px;
-    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+    box-shadow: #fff 4px 4px 0 0,var(--mainColor) 4px 4px 0 1px;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
@@ -494,7 +600,7 @@ button:active {
 }
 
 button:not([disabled]):active {
-    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    box-shadow: #fff 2px 2px 0 0, var(--mainColor) 2px 2px 0 1px;
     transform: translate(2px, 2px);
 }
 
@@ -506,7 +612,7 @@ button:not([disabled]):active {
 
 .typing-text {
     overflow: hidden; /* Ensure the text is not visible initially */
-    border-right: .10em solid #07F847; /* Create a blinking cursor effect */
+    border-right: .10em solid var(--secColor); /* Create a blinking cursor effect */
     white-space: nowrap; /* Prevent line breaks */
     margin: 0 auto; /* Center the text */
     letter-spacing: .10em; /* Adjust letter spacing for a typewriter effect */
@@ -522,7 +628,7 @@ button:not([disabled]):active {
   
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: #07F847; }
+    50% { border-color: var(--secColor); }
 }
 
 /*#endregion*/
